@@ -1,3 +1,7 @@
+import featuredSports from "@/assets/featured-sports.jpg";
+import featuredSUV from "@/assets/featured-suv.jpg";
+import featuredSedan from "@/assets/featured-sedan.jpg";
+
 export interface Car {
   id: string;
   make: string;
@@ -52,7 +56,7 @@ export const cars: Car[] = [
     color: "Rosso Corsa Red",
     condition: "new",
     vin: "ZFF9A2A5XP0123456",
-    image: "/src/assets/featured-sports.jpg",
+    image: featuredSports,
     description: "The Ferrari F8 Tributo represents the pinnacle of Italian engineering and design."
   },
   {
@@ -77,7 +81,7 @@ export const cars: Car[] = [
     color: "Verde Mantis",
     condition: "new",
     vin: "ZHWUC1ZF8PLA12345",
-    image: "/src/assets/featured-sports.jpg",
+    image: featuredSports,
     description: "Pure emotion in the form of a super sports car."
   },
   {
@@ -102,7 +106,7 @@ export const cars: Car[] = [
     color: "GT Silver",
     condition: "new",
     vin: "WP0AB2A99PS123456",
-    image: "/src/assets/featured-sports.jpg",
+    image: featuredSports,
     description: "The iconic 911 Turbo S delivers legendary performance."
   },
   {
@@ -127,7 +131,7 @@ export const cars: Car[] = [
     color: "Papaya Orange",
     condition: "used",
     vin: "SBM13DAA6NW123456",
-    image: "/src/assets/featured-sports.jpg",
+    image: featuredSports,
     description: "British engineering excellence with breathtaking performance."
   },
   {
@@ -152,7 +156,7 @@ export const cars: Car[] = [
     color: "Midnight Black",
     condition: "new",
     vin: "SCFRMFBV7PGF12345",
-    image: "/src/assets/featured-sports.jpg",
+    image: featuredSports,
     description: "Timeless British luxury meets modern performance."
   },
 
@@ -179,7 +183,7 @@ export const cars: Car[] = [
     color: "Obsidian Black",
     condition: "new",
     vin: "WDDUG8FB4PA123456",
-    image: "/src/assets/featured-sedan.jpg",
+    image: featuredSedan,
     description: "The pinnacle of luxury and innovation."
   },
   {
@@ -204,7 +208,7 @@ export const cars: Car[] = [
     color: "Alpine White",
     condition: "new",
     vin: "WBA7U2C50PCF12345",
-    image: "/src/assets/featured-sedan.jpg",
+    image: featuredSedan,
     description: "Sheer driving pleasure in ultimate luxury form."
   },
   {
@@ -229,7 +233,7 @@ export const cars: Car[] = [
     color: "Quantum Gray",
     condition: "new",
     vin: "WAUZZZ4G2PN123456",
-    image: "/src/assets/featured-sedan.jpg",
+    image: featuredSedan,
     description: "Vorsprung durch Technik - Progress through technology."
   },
   {
@@ -254,7 +258,7 @@ export const cars: Car[] = [
     color: "Atomic Silver",
     condition: "certified",
     vin: "JTHCL5C70PA123456",
-    image: "/src/assets/featured-sedan.jpg",
+    image: featuredSedan,
     description: "Japanese craftsmanship meets luxury innovation."
   },
   {
@@ -279,7 +283,7 @@ export const cars: Car[] = [
     color: "Moonbeam Silver",
     condition: "new",
     vin: "KMHH14JA9PA123456",
-    image: "/src/assets/featured-sedan.jpg",
+    image: featuredSedan,
     description: "Athletic elegance with audacious design."
   },
 
@@ -306,7 +310,7 @@ export const cars: Car[] = [
     color: "Santorini Black",
     condition: "new",
     vin: "SALWR2RV9PA123456",
-    image: "/src/assets/featured-suv.jpg",
+    image: featuredSUV,
     description: "Uncompromising luxury meets exceptional capability."
   },
   {
@@ -331,7 +335,7 @@ export const cars: Car[] = [
     color: "Carrara White",
     condition: "new",
     vin: "WP1AB2A52PKA12345",
-    image: "/src/assets/featured-suv.jpg",
+    image: featuredSUV,
     description: "Sports car performance in SUV form."
   },
   {
@@ -356,7 +360,7 @@ export const cars: Car[] = [
     color: "Carbon Black",
     condition: "certified",
     vin: "5UXCW2C00P9P12345",
-    image: "/src/assets/featured-suv.jpg",
+    image: featuredSUV,
     description: "The ultimate driving machine for the family."
   },
   {
@@ -381,7 +385,7 @@ export const cars: Car[] = [
     color: "Selenite Grey",
     condition: "new",
     vin: "4JGDF7CE4PA123456",
-    image: "/src/assets/featured-suv.jpg",
+    image: featuredSUV,
     description: "The S-Class of SUVs."
   },
   {
@@ -406,7 +410,7 @@ export const cars: Car[] = [
     color: "Summit White",
     condition: "new",
     vin: "1GYS4NKJ7PR123456",
-    image: "/src/assets/featured-suv.jpg",
+    image: featuredSUV,
     description: "Bold and unapologetic American luxury."
   }
 ];
@@ -489,9 +493,9 @@ for (let i = 16; i <= 300; i++) {
     color,
     condition,
     vin: `1HGBH41JXMN${String(Math.floor(Math.random() * 900000) + 100000)}`,
-    image: type === 'suv' ? "/src/assets/featured-suv.jpg" : 
-           type === 'sports' ? "/src/assets/featured-sports.jpg" : 
-           "/src/assets/featured-sedan.jpg",
+    image: type === 'suv' ? featuredSUV : 
+           type === 'sports' ? featuredSports : 
+           featuredSedan,
     description: `${year} ${brand.make} ${model} - ${condition === 'new' ? 'Brand new' : condition === 'certified' ? 'Certified pre-owned' : 'Pre-owned'} vehicle in excellent condition.`
   });
 }
