@@ -64,12 +64,12 @@ export const CarFilters = ({ filters, onChange, onReset, totalResults }: CarFilt
 
         <div className="space-y-2">
           <Label>Make</Label>
-          <Select value={filters.make} onValueChange={(value) => onChange({ ...filters, make: value })}>
+          <Select value={filters.make || "all"} onValueChange={(value) => onChange({ ...filters, make: value === "all" ? "" : value })}>
             <SelectTrigger className="bg-background/50">
               <SelectValue placeholder="All Makes" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Makes</SelectItem>
+              <SelectItem value="all">All Makes</SelectItem>
               {makes.map((make) => (
                 <SelectItem key={make} value={make}>{make}</SelectItem>
               ))}
@@ -79,12 +79,12 @@ export const CarFilters = ({ filters, onChange, onReset, totalResults }: CarFilt
 
         <div className="space-y-2">
           <Label>Type</Label>
-          <Select value={filters.type} onValueChange={(value) => onChange({ ...filters, type: value })}>
+          <Select value={filters.type || "all"} onValueChange={(value) => onChange({ ...filters, type: value === "all" ? "" : value })}>
             <SelectTrigger className="bg-background/50">
               <SelectValue placeholder="All Types" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Types</SelectItem>
+              <SelectItem value="all">All Types</SelectItem>
               {types.map((type) => (
                 <SelectItem key={type} value={type}>{type.charAt(0).toUpperCase() + type.slice(1)}</SelectItem>
               ))}
@@ -94,12 +94,12 @@ export const CarFilters = ({ filters, onChange, onReset, totalResults }: CarFilt
 
         <div className="space-y-2">
           <Label>Fuel</Label>
-          <Select value={filters.fuel} onValueChange={(value) => onChange({ ...filters, fuel: value })}>
+          <Select value={filters.fuel || "all"} onValueChange={(value) => onChange({ ...filters, fuel: value === "all" ? "" : value })}>
             <SelectTrigger className="bg-background/50">
               <SelectValue placeholder="All Fuel Types" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Fuel Types</SelectItem>
+              <SelectItem value="all">All Fuel Types</SelectItem>
               {fuels.map((fuel) => (
                 <SelectItem key={fuel} value={fuel}>{fuel.charAt(0).toUpperCase() + fuel.slice(1)}</SelectItem>
               ))}
@@ -109,12 +109,12 @@ export const CarFilters = ({ filters, onChange, onReset, totalResults }: CarFilt
 
         <div className="space-y-2">
           <Label>Condition</Label>
-          <Select value={filters.condition} onValueChange={(value) => onChange({ ...filters, condition: value })}>
+          <Select value={filters.condition || "all"} onValueChange={(value) => onChange({ ...filters, condition: value === "all" ? "" : value })}>
             <SelectTrigger className="bg-background/50">
               <SelectValue placeholder="All Conditions" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Conditions</SelectItem>
+              <SelectItem value="all">All Conditions</SelectItem>
               {conditions.map((condition) => (
                 <SelectItem key={condition} value={condition}>{condition.charAt(0).toUpperCase() + condition.slice(1)}</SelectItem>
               ))}
